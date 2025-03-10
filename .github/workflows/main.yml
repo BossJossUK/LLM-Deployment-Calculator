@@ -1,0 +1,12 @@
+name: Keep Streamlit Alive
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'  # Every 10 minutes 
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Streamlit App
+        run: curl -I https://add-cost-estimation-cthqfxemcqogyqwentbgpm.streamlit.app/
